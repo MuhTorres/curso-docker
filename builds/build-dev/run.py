@@ -1,6 +1,6 @@
 import logging
 import http.server
-import sockerserver
+import socketserver
 import getpass
 
 class MyHttpHandler(http.server.SimpleHTTPRequestHandler):
@@ -21,7 +21,7 @@ logging.getLogger().addHandler(logging.StreamHandler())
 logging.info('inicializando...')
 PORT = 8000
 
-httpd = sockerserver.TCPServer(("", PORT), MyHttpHandler)
+httpd = socketserver.TCPServer(("", PORT), MyHttpHandler)
 logging.info('escutando a porta: %s', PORT)
 logging.info('usuário: %s', getpass.getuser())
 httpd.serve_forever()
