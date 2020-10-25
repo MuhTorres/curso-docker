@@ -1,3 +1,4 @@
 *-lock.*
 *.rar
 *.zip
+*node_modules
